@@ -13,7 +13,12 @@ function TodoForm({ addItem }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <TextField id="outlined-basic" variant="outlined" value={value} onChange={e => setValue(e.target.value)} />
+      <TextField
+        id="outlined-basic"
+        variant="outlined"
+        value={value}
+        onChange={e => setValue(e.target.value)}
+      />
     </form>
   )
 }
