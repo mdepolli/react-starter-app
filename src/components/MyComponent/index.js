@@ -12,8 +12,8 @@ function TodoForm({ addItem }) {
   };
 
   return (
-    <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-      <TextField id="outlined-basic" variant="outlined" />
+    <form onSubmit={handleSubmit}>
+      <TextField id="outlined-basic" variant="outlined" value={value} onChange={e => setValue(e.target.value)} />
     </form>
   )
 }
