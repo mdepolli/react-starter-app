@@ -1,15 +1,28 @@
-import React from 'react';
-import { List, ListItem, ListItemText } from '@material-ui/core';
+import React, { useState } from 'react';
+import { List, ListItem, ListItemText, TextField } from '@material-ui/core';
 
-const MyComponent = () => (
-  <List component="nav" aria-label="main mailbox folders">
-    <ListItem button>
-      <ListItemText primary="Todo 1" />
-    </ListItem>
-    <ListItem button>
-      <ListItemText primary="Todo 2" />
-    </ListItem>
-  </List>
-)
+function MyComponent () {
+  const [items, setItems] = useState([
+    { text: "Finish Skillhire test" },
+    { text: "Don't neglect wife in the process" },
+    { text: "Pet cat" }
+  ]);
+
+  return (
+    <React.Fragment>
+      <form noValidate autoComplete="off">
+        <TextField id="outlined-basic" variant="outlined" />
+      </form>
+
+      <List component="nav" aria-label="main">
+        {items.map((item, index) => (
+          <ListItem key={index} button>
+            <ListItemText primary={item.text} />
+          </ListItem>
+        ))}
+      </List>
+    </React.Fragment>
+  )
+}
 
 export default MyComponent;

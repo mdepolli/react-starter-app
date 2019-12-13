@@ -9,8 +9,8 @@ function App() {
         my={20}
         display='flex'
         justifyContent='center'
-        alignItems='center'
-        flexDirection='row'
+        alignItems='left'
+        flexDirection='column'
       >
         <MyComponent />
       </Box>
