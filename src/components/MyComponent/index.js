@@ -57,7 +57,10 @@ function MyComponent () {
       <List component="nav" aria-label="main">
         {items.map((item, index) => (
           <ListItem key={index} onClick={() => toggleDone(index)} button>
-            <ListItemText primary={item.text} />
+            <ListItemText
+              style={{ textDecoration: item.isDone ? "line-through" : "" }}
+              primary={item.text}
+            />
           </ListItem>
         ))}
       </List>
