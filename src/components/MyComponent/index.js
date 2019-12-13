@@ -1,14 +1,15 @@
-import React from 'react'
-import { Button } from '@material-ui/core'
-
-/*
-  Welcome developer! Please fully customize this component as needed.
-*/
+import React from 'react';
+import { List, ListItem, ListItemText } from '@material-ui/core';
 
 const MyComponent = () => (
-  <Button>
-    Click Me
-  </Button>
+  <List component="nav" aria-label="main mailbox folders">
+    <ListItem button>
+      <ListItemText primary="Todo 1" />
+    </ListItem>
+    <ListItem button>
+      <ListItemText primary="Todo 2" />
+    </ListItem>
+  </List>
 )
 
-export default MyComponent
+export default MyComponent;
