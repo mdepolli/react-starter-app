@@ -20,13 +20,28 @@ function TodoForm({ addItem }) {
 
 function MyComponent () {
   const [items, setItems] = useState([
-    { text: "Finish Skillhire test" },
-    { text: "Don't neglect wife in the process" },
-    { text: "Pet cat" }
+    {
+      text: "Finish Skillhire test",
+      isDone: false
+    },
+    {
+      text: "Don't neglect wife in the process",
+      isDone: false
+    },
+    {
+      text: "Pet cat",
+      isDone: false
+    }
   ]);
 
   const addItem = text => {
     const newItems = [...items, { text }];
+    setItems(newItems);
+  };
+
+  const toggleDone = index => {
+    const newItems = [...items];
+    newItems[index].isDone = !newItems[index].isDone;
     setItems(newItems);
   };
 
@@ -36,7 +51,7 @@ function MyComponent () {
 
       <List component="nav" aria-label="main">
         {items.map((item, index) => (
-          <ListItem key={index} button>
+          <ListItem key={index} onClick={() => toggleDone(index)} button>
             <ListItemText primary={item.text} />
           </ListItem>
         ))}
